@@ -1,21 +1,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-/*
+/**
  * main - Entry point
- *
- * Return: Always 0
+ * Description: 'the program's description'
+ * @parameter: describe the parameter
+ * Return: Always 0 (Success)
  */
-/* betty style doc for function main goes thiere */
 int main(void)
 {
 	int n;
 	int digit = 0;
-	srand(time(0));
 
+	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
 	digit = abs(n) % 10;
 	if (n < 0)
 	digit = -1 * digit;
