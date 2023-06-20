@@ -2,9 +2,9 @@
 
 /**
  * main - Entry point
+ * print_alphabet - Entry point
  *
- * Decription: Program prints alphabet in lowercase
- *
+ * Description: function responsible for printing the alphabet
  * Return: Always 0
  */
 
@@ -14,6 +14,12 @@ int main(void)
 	print_alphabet();
 	return (0);
 }
+/**
+ * print_alphabet - Prints the alphabet in lowercase.
+ *
+ * Description: This function prints all the lowercase letters of the
+ * alphabet using the _putchar function.
+ */
 void print_alphabet(void)
 {
 	int i = 0;
