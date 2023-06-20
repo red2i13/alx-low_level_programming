@@ -8,10 +8,10 @@
  * Return: Always 0
  */
 
-void print_alphabet(void);
 int main(void)
 {
 	print_alphabet();
+	_putchar('\n');
 	return (0);
 }
 /**
@@ -30,8 +30,6 @@ void print_alphabet(void)
 	_putchar(alpha[i]);
 	i++;
 	}
-	_putchar('\n');
-
 }
 /**
  * _putchar - writes the character c to stdout
