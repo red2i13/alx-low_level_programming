@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * main - Entry point
@@ -9,7 +9,6 @@
  */
 
 void print_alphabet(void);
-int _putchar(char c);
 int main(void)
 {
 	print_alphabet();
