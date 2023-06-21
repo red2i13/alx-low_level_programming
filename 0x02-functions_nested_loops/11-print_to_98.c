@@ -7,19 +7,22 @@
 
 void print_to_98(int n)
 {
+	int lp;
+	int tensDigit, onesDigit;
+
 	if (n > 0)
 	{
-		int lp = 98 - n;
-		int tensDigit, onesDigit;
+		lp = 98 - n;
 
 		for (; lp >= 0; lp--)
 		{
 			tensDigit = n / 10;
 			onesDigit = n % 10;
 
-			putchar(tensDigit + '0');
-			putchar(onesDigit + '0');
-			putchar('\n');
+			_putchar(tensDigit + '0');
+			_putchar(onesDigit + '0');
+			_putchar(',');
+			_putchar(' ');
 			n++;
 		}
 	}
@@ -28,17 +31,17 @@ void print_to_98(int n)
 
 	{
 		n = -n;
-		int lp = 98 + n;
-		int tensDigit, onesDigit;
+		lp = 98 + n;
 
 		for (; lp >= 0; lp--)
 		{
 			tensDigit = n / 10;
 			onesDigit = n % 10;
 
-			putchar(tensDigit + '0');
-			putchar(onesDigit + '0');
-			putchar('\n');
+			_putchar(tensDigit + '0');
+			_putchar(onesDigit + '0');
+			_putchar(',');
+			_putchar(' ');
 			n++;
 		}
 	}
