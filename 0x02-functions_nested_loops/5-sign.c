@@ -23,6 +23,6 @@ int print_sign(int n)
 		return (-1);
 	}
 	else
-		putchar(plus);
+		_putchar(plus);
 	return (1);
 }
