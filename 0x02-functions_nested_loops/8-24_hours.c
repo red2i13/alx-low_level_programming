@@ -6,19 +6,22 @@
 
 void jack_bauer(void)
 {
-	for (int i = 0; i < 24; i++)
+	int i, j;
+	int tensDigit, onesDigit, tens, ones;
+
+	for (i = 0; i < 24; i++)
 	{
 
-		for (int j = 0; j < 60; j++)
+		for (j = 0; j < 60; j++)
 		{
-			int tensDigit = i / 10;
-			int onesDigit = i % 10;
+			tensDigit = i / 10;
+			onesDigit = i % 10;
 
 			putchar(tensDigit + '0');
 			putchar(onesDigit + '0');
 			putchar(':');
-			int tens = j / 10;
-			int ones = j % 10;
+			tens = j / 10;
+			ones = j % 10;
 
 			putchar(tens + '0');
 			putchar(ones + '0');
