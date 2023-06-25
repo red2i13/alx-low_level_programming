@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * print_to_98 - function that prints all natural numbers from n to 98
- * @n: Starting point
+ * add - Entry poinr
+ * @x: first number
+ * @y: second number
+ * Return: the sum of the numbers
  */
 int add(int x, int y)
 {
-	return (x+y);
+	return (x + y);
 }
