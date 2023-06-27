@@ -13,7 +13,29 @@ void print_rev(char *s)
 	num = _strlen(s);
 	for (i = num - 1; i >= 0; i--)
 	{
-		_putchar(i);
+		_putchar(s[i]);
 	}
+	_putchar('\n');
 }
 
+/**
+ * _strlen - Entry point
+ *
+ * Description: returns the length of a string
+ *
+ * @str: string of characters
+ *
+ * Return: Always n
+ */
+
+int _strlen(char *str)
+{
+	int n;
+
+	for (n = 0; *str != '\0'; str++)
+	{
+		n++;
+	}
+	return (n);
+
+}
