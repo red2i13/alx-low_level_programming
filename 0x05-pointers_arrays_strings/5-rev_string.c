@@ -8,10 +8,15 @@
  */
 void rev_string(char *s)
 {
-	int num, i;
+	int i = 0;
 	char tmp;
+	int num = 0;
 
-	num = _strlen(s);
+	while (s[i] != '\0')
+	{
+		num++;
+		i++;
+	}
 
 	for (i = 0; i < num / 2; i++)
 	{
@@ -19,16 +24,4 @@ void rev_string(char *s)
 		s[i] = s[num - i - 1];
 		s[num - i - 1] = tmp;
 	}
-}
-
-int _strlen(char *str)
-{
-	int n;
-
-	for (n = 0; *str != '\0'; str++)
-	{
-		n++;
-	}
-	return (n);
-
 }
