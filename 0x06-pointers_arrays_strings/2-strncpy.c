@@ -4,7 +4,7 @@
 /**
  * _strncpy - Entry point
  *
- * Description: function that copy a strings.
+ * Description: function that copy a string.
  * @dest: Recipient string
  * @src: Donor string
  * @n: bytes from src
@@ -13,22 +13,15 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0, len = 0, z = 0;
-	int j = 0;
-	char tmp;
+	int i;
 
-	while (dest[i] != '\0')
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
-		len++;
-		i++;
+		dest[i] = src[i];
 	}
-
-	while (src[z] != src[n])
+	for (; i < n; i++)
 	{
-		tmp = src[z];
-		dest[j] = tmp;
-		z++;
-		j++;
+		dest[i] = '\0';
 	}
 
 	return (dest);
