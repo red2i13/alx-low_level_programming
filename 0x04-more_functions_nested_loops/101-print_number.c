@@ -34,6 +34,11 @@ void print_number(int n)
 		i++;
 	}
 	i = 0;
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
 	if (n > 0)
 	{
 		while (i < loop)
@@ -46,13 +51,6 @@ void print_number(int n)
 			i++;
 		}
 	}
-	else if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-		print_number(n);
-	}
 	else
 		_putchar('0');
-
 }
