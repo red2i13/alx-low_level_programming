@@ -24,10 +24,17 @@ int len(int nb)
 void print_number(int n)
 {
 	int i = 1;
-	int loop = len(n);
+	int loop;
 	int dev = 1;
 	int num = n;
 
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		_putchar('2');
+		n = 147483648;
+	}
+	loop = len(n);
 	while (i < loop)
 	{
 		dev *= 10;
@@ -44,10 +51,9 @@ void print_number(int n)
 	{
 		while (i < loop)
 		{
-			num /= dev;
+			num = n / dev;
 			num = num % 10;
 			_putchar(num + '0');
-			num = n;
 			dev /= 10;
 			i++;
 		}
