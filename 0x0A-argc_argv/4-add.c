@@ -27,45 +27,6 @@ int atoi(char *str)
 }
 
 /**
- * itoa - func
- * @num: number
- * @str: string
- * Return: string to int
- */
-
-void itoa(int num, char *str)
-{
-	int i = 0;
-	int j = 0;
-	int sign = 0;
-
-	if (num < 0)
-	{
-		sign = 1;
-		num = -num;
-	}
-
-	do {
-		str[i++] = num % 10 + '0';
-		num /= 10;
-	} while (num > 0);
-
-	if (sign)
-		str[i++] = '-';
-
-	while (j < i / 2)
-	{
-		char tmp = str[j];
-
-		str[j] = str[i - j - 1];
-		str[i - j - 1] = tmp;
-		j++;
-	}
-
-	str[i] = '\0';
-}
-
-/**
  * main - calculate add
  * @ac: arg count
  * @av: arg var
@@ -74,10 +35,9 @@ void itoa(int num, char *str)
 
 int main(int ac, char **av)
 {
-	int add;
 	int i = 1;
 	int j = 0;
-	char result[99];
+	int result = 0;
 
 	if (ac == 1)
 	{
@@ -96,10 +56,12 @@ int main(int ac, char **av)
 			j++;
 		}
 		j = 0;
-		add += atoi(av[i]);
 		i++;
 	}
-	itoa(add, result);
-	printf("%s\n", result);
+	for (i = 1; i < ac; i++)
+	{
+		result += atoi(av[i]);
+	}
+	printf("%d\n", result);
 	return (0);
 }
