@@ -79,7 +79,7 @@ int main(int ac, char **av)
 	int j = 0;
 	char result[99];
 
-	if (ac != 3)
+	if (ac == 1)
 	{
 		write(1, "0\n", 2);
 		return (1);
