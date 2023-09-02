@@ -3,12 +3,12 @@
 #include "main.h"
 
 /**
- * atoi - func
+ * ft_atoi - func
  * @str: string
  * Return: result
  */
 
-int atoi(char *str)
+int ft_atoi(char *str)
 {
 	int i = 0;
 	int result = 0;
@@ -45,7 +45,7 @@ int main(int ac, char **av)
 		{
 			if (!(av[i][j] >= '0' && av[i][j] <= '9'))
 			{
-				write(1, "Error\n", 6);
+				printf("Error\n");
 				return (1);
 			}
 			j++;
@@ -55,7 +55,7 @@ int main(int ac, char **av)
 	}
 	for (i = 1; i < ac; i++)
 	{
-		result += atoi(av[i]);
+		result += ft_atoi(av[i]);
 	}
 	printf("%d\n", result);
 	return (0);
