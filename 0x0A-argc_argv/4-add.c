@@ -12,19 +12,13 @@ int atoi(char *str)
 {
 	int i = 0;
 	int result = 0;
-	int sign = 1;
 
-	if (str[0] == '-')
-	{
-		sign = -1;
-		i++;
-	}
 	while (str[i] != '\0')
 	{
 		result = result * 10 + str[i] - '0';
 		i++;
 	}
-	return (result * sign);
+	return (result);
 }
 
 /**
