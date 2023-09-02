@@ -88,7 +88,7 @@ int main(int ac, char **av)
 	{
 		while (av[i][j])
 		{
-			if (!(av[i][j] == '-' || (av[i][j] >= '0' && av[i][j] <= '9')))
+			if (!(av[i][j] >= '0' && av[i][j] <= '9'))
 			{
 				write(1, "Error\n", 6);
 				return (1);
@@ -100,12 +100,6 @@ int main(int ac, char **av)
 		i++;
 	}
 	itoa(add, result);
-	i = 0;
-	while (result[i] != '\0')
-	{
-		write(1, &result[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
+	printf("%s\n", result);
 	return (0);
 }
