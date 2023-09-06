@@ -47,7 +47,7 @@ char *argstostr(int ac, char **av)
 		tot += _strlen(av[i]);
 		i++;
 	}
-	ptr = (void *)malloc(ac + (sizeof(char) * tot));
+	ptr = (void *)malloc(ac + (sizeof(char) * tot) + 1);
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
@@ -64,5 +64,6 @@ char *argstostr(int ac, char **av)
 		j++;
 		i++;
 	}
+	ptr[j] = '\0';
 	return (ptr);
 }
