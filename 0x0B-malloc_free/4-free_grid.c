@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-/** 
+/**
  * free_grid - freeup memory
  * @grid: grid to empty up
  * @height: second dimension
