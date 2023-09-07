@@ -36,8 +36,11 @@ int _strlen(char *str)
 	int i = 0;
 	int words = 0;
 
-	while (str[i] != '\0' && str[i] == ' ')
+	if (str[i] == ' ')
+	{
+		while (str[i] != '\0' && str[i] == ' ')
 		i++;
+	}
 	while (str[i] != '\0')
 	{
 		if (str[i] == ' ' && (str[i + 1] >= 33 && str[i + 1] <= 126))
