@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _memcpy - replace src to dest with an n limiter of bytes
@@ -70,12 +71,12 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0' && j <= words - 2)
 	{
 		if (str[i] != ' ')
 		{
 			start = i;
-			while (str[i] != ' ')
+			while (str[i] != ' ' && str[i] != '\0')
 			{
 				len++;
 				i++;
