@@ -61,7 +61,7 @@ char **strtow(char *str)
 	words = _strlen(str);
 	words += 2;
 	ptr = malloc(sizeof(char *) * words);
-	if (ptr == NULL)
+	if (ptr == NULL || str == NULL || !(_strlen(str)))
 	{
 		free(ptr);
 		return (NULL);
