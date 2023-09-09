@@ -15,10 +15,12 @@ int checks(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		else if (i >= 10)
+		if (i >= 10)
 			return (-1);
+		else if (str[0] == '-' || str[0] == '+')
+			continue;
+		else if (!(str[i] >= '0' && str[i] <= '9'))
+			return (0);
 	}
 	return (1);
 }
@@ -39,9 +41,20 @@ char *f_itoa(int nb)
 		i = i / 10;
 		len++;
 	}
-	ptr = (char *) malloc((len + 1) * sizeof(char));
+	if (nb > 0)
+	{
+		ptr = (char *) malloc((len + 1) * sizeof(char));
+		ptr[0] = '\0';
+	}
+	else if (nb < 0)
+	{
+		ptr = (char *) malloc((len + 2) * sizeof(char));
+		ptr[0] = '\0';
+		ptr[0] = '-';
+		nb *= -1;
+		len++;
+	}
 	i = len - 1;
-	ptr[0] = '\0';
 	while (nb != 0)
 	{
 		ptr[i] = nb % 10 + 48;
@@ -60,8 +73,14 @@ char *f_itoa(int nb)
 int f_atoi(char *nb)
 {
 	int i = 0, j = 0;
-	int result = 0;
+	int result = 0, sign = 1;
 
+	if (nb[0] == '-')
+	{
+		sign = -1;
+		j++;
+		i++;
+	}
 	while (nb[i])
 		i++;
 	while (j < i)
@@ -69,7 +88,7 @@ int f_atoi(char *nb)
 		result = result * 10 + nb[j] - '0';
 		j++;
 	}
-	return (result);
+	return (result * sign);
 
 }
 /**
